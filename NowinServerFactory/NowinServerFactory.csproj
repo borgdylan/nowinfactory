@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{110C0D42-FA19-4CFA-BE14-EC1CB9B94920}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NowinServerFactory</RootNamespace>
+    <AssemblyName>NowinServerFactory</AssemblyName>
+    <UseMSBuildEngine>True</UseMSBuildEngine>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Security" />
+    <Reference Include="Nowin">
+      <HintPath>..\packages\Nowin.0.11.0.0\lib\net45\Nowin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq" />
+    <Reference Include="System.Reflection" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\Microsoft.Bcl.Immutable.1.1.22-beta\lib\portable-net45+win8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata">
+      <HintPath>..\packages\Microsoft.Bcl.Metadata.1.0.11-alpha\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.DataAnnotations.Core">
+      <HintPath>..\packages\Microsoft.DataAnnotations.Core.0.1-alpha-build-0133\lib\net45\Microsoft.DataAnnotations.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DataAnnotations.Supplemental">
+      <HintPath>..\packages\Microsoft.DataAnnotations.Supplemental.0.1-alpha-build-0133\lib\net45\Microsoft.DataAnnotations.Supplemental.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FeatureModel">
+      <HintPath>..\packages\Microsoft.AspNet.FeatureModel.1.0.0-build-0577\lib\net45\Microsoft.AspNet.FeatureModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Http">
+      <HintPath>..\packages\Microsoft.AspNet.Http.1.0.0-build-0577\lib\net45\Microsoft.AspNet.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.PipelineCore">
+      <HintPath>..\packages\Microsoft.AspNet.PipelineCore.1.0.0-build-0577\lib\net45\Microsoft.AspNet.PipelineCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Security.DataProtection">
+      <HintPath>..\packages\Microsoft.AspNet.Security.DataProtection.1.0.0-build-0207\lib\net45\Microsoft.AspNet.Security.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.ConfigurationModel">
+      <HintPath>..\packages\Microsoft.Framework.ConfigurationModel.1.0.0-build-0333\lib\net45\Microsoft.Framework.ConfigurationModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.DependencyInjection">
+      <HintPath>..\packages\Microsoft.Framework.DependencyInjection.1.0.0-build-0514\lib\net45\Microsoft.Framework.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Logging">
+      <HintPath>..\packages\Microsoft.Framework.Logging.1.0.0-build-0249\lib\net45\Microsoft.Framework.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.Interfaces">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Hosting">
+      <HintPath>..\packages\Microsoft.AspNet.Hosting.1.0.0-build-0780\lib\net45\Microsoft.AspNet.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpApplicationFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpApplicationFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpBufferingFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpBufferingFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpClientCertificateFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpClientCertificateFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpConnectionFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpConnectionFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpOpaqueUpgradeFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpOpaqueUpgradeFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpRequestFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpRequestFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpRequestLifetimeFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpRequestLifetimeFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpResponseFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpResponseFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpSendFileFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpSendFileFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IHttpWebSocketFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IHttpWebSocketFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.IWebSocketAcceptContext">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.IWebSocketAcceptContext.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.Security.IAuthenticateContext">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.Security.IAuthenticateContext.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.Security.IAuthenticationHandler">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.Security.IAuthenticationHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.Security.IAuthTypeContext">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.Security.IAuthTypeContext.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.Security.IChallengeContext">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.Security.IChallengeContext.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.Security.IHttpAuthenticationFeature">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.Security.IHttpAuthenticationFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.Security.ISignInContext">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.Security.ISignInContext.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.HttpFeature.Security.ISignOutContext">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.AspNet.HttpFeature.Security.ISignOutContext.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.AssemblyNeutralAttribute">
+      <HintPath>..\packages\Microsoft.AspNet.HttpFeature.1.0.0-build-0577\lib\net45\Microsoft.Framework.Runtime.AssemblyNeutralAttribute.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IApplicationEnvironment">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IApplicationEnvironment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IApplicationShutdown">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IApplicationShutdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IAssemblyLoader">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IAssemblyLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IAssemblyLoaderEngine">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IAssemblyLoaderEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IFileMonitor">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IFileMonitor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IFileWatcher">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IFileWatcher.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IHost">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IHostContainer">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IHostContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.ILibraryExport">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.ILibraryExport.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.ILibraryExportProvider">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.ILibraryExportProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.ILibraryInformation">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.ILibraryInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.ILibraryManager">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.ILibraryManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IMetadataFileReference">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IMetadataFileReference.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IMetadataRawReference">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IMetadataRawReference.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.IMetadataReference">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.IMetadataReference.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.Infrastructure.CallContextServiceLocator">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.Infrastructure.CallContextServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.Infrastructure.IServiceProviderLocator">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.Infrastructure.IServiceProviderLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.ISourceFileReference">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.ISourceFileReference.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Framework.Runtime.ISourceReference">
+      <HintPath>..\packages\Microsoft.Framework.Runtime.Interfaces.1.0.0-build-0549\lib\net45\Microsoft.Framework.Runtime.ISourceReference.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Security">
+      <HintPath>..\packages\Microsoft.AspNet.Security.1.0.0-build-0778\lib\net45\Microsoft.AspNet.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Owin.1.0.0-build-0577\lib\net45\Microsoft.AspNet.Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NowinServerFactory.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="project.json" />
+  </ItemGroup>
+</Project>

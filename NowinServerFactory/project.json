@@ -1,0 +1,16 @@
+{
+	"version": "1.0.1",
+	"dependencies": {
+  		"Microsoft.AspNet.Hosting": "1.0.0-*",
+        "Microsoft.AspNet.Owin": "1.0.0-*",
+        "dylan.NET.Tasks": ""
+ 	 },
+ 	 "frameworks": {
+    	"aspnet50": {
+      		"dependencies": {
+        		"Nowin": "0.13.6",
+        		"Newtonsoft.Json": "6.0.8"
+       		}
+      	}
+    }
+}
