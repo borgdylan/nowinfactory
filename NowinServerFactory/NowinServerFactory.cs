@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
+//using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting.Server;
 using Microsoft.AspNet.Owin;
-using Microsoft.Framework.ConfigurationModel;
-using Microsoft.AspNet.FeatureModel;
-using Microsoft.AspNet.Http.Interfaces;
+using Microsoft.Framework.Configuration;
+using Microsoft.AspNet.Http.Features;
+//using Microsoft.AspNet.Http;
 using Nowin;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 
 namespace NowinServerFactory
 {
@@ -25,34 +25,34 @@ namespace NowinServerFactory
 		{
 			var ofc = new OwinFeatureCollection(env);
 			var t = _callback.Invoke(ofc);
-			
-			return TaskHelpers.Await(t, () => {Console.WriteLine("done");}, (ex) => {Console.WriteLine("failed with " + ex.ToString());});
+			return t;
+			//return TaskHelpers.Await(t, () => {Console.WriteLine("done");}, (ex) => {Console.WriteLine("failed with " + ex.ToString());});
 		}
 
-		public IServerInformation Initialize(IConfiguration configuration)
+		public IFeatureCollection Initialize(IConfiguration configuration)
 		{
 			// TODO: Parse config
 			var builder = ServerBuilder.New()
 				.SetAddress(IPAddress.Any)
-				.SetPort(configuration.Get("port") != null ? Int32.Parse(configuration.Get("port")) : 8080)
-				.SetOwinApp(HandleRequest);
-				//.SetOwinApp(OwinWebSocketAcceptAdapter.AdaptWebSockets(HandleRequest));
-
-			return new ServerInformation(builder);
+				.SetPort(configuration["port"] != null ? Int32.Parse(configuration["port"]) : 8080)
+				.SetOwinApp(OwinWebSocketAcceptAdapter.AdaptWebSockets(HandleRequest));
+			var serverFeatures = new FeatureCollection();
+            serverFeatures.Set<NowinServerInformation>(new NowinServerInformation(builder));
+            return serverFeatures;
 		}
 
-		public IDisposable Start(IServerInformation serverInformation, Func<IFeatureCollection, Task> application)
+		public IDisposable Start(IFeatureCollection serverFeatures, Func<IFeatureCollection, Task> application)
 		{
-			var information = (ServerInformation)serverInformation;
+			var information = (NowinServerInformation)serverFeatures.Get<NowinServerInformation>();
 			_callback = application;
 			INowinServer server = information.Builder.Build();
 			server.Start();
 			return server;
 		}
 
-		public class ServerInformation : IServerInformation
+		public class NowinServerInformation
 		{
-			public ServerInformation(ServerBuilder builder)
+			public NowinServerInformation(ServerBuilder builder)
 			{
 				Builder = builder;
 			}
